@@ -33,7 +33,7 @@ int[] textColor = {255-bgColor[0], 255-bgColor[1], 255-bgColor[2]};
 int rateOfFrames = 6;
 int numDisplayed = 32;
 int sizeOfText = 32;
-int fadeAmount = 2;
+int fadeAmount = 3;
 int fadeHeight = numDisplayed/2;
 boolean rainbowText = !true;
 boolean greenText = true;
@@ -115,7 +115,7 @@ void draw() {
 
   // shift the text color
   for (int c = 0; c < 3; c++) {
-    textColor[c] = textColor[c] + floor(random(32) - 16);
+    textColor[c] = textColor[c] + floor(random(32) + 1 - 16);
     if (textColor[c] < 0) {
       textColor[c] = 255 + textColor[c];
     }
