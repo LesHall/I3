@@ -20,7 +20,7 @@
 
 
 // global variables
-  int maxEntries = 7;
+  int maxEntries = 4;
 String filename = "10.txt";
 int subsetLines = 1000;
 String[] lines = {};
@@ -30,7 +30,7 @@ String[] dictionary = {};
 int index = 0;
 int[] bgColor = {0, 0, 0};
 int[] textColor = {255-bgColor[0], 255-bgColor[1], 255-bgColor[2]};
-int rateOfFrames = 4;
+int rateOfFrames = 6;
 int numDisplayed = 32;
 int sizeOfText = 32;
 int fadeAmount = 2;
@@ -99,7 +99,7 @@ void draw() {
   int numEntries = ceil( random(maxEntries) );
   String[] entries = {};
   for (int e = 0; e < numEntries; e++) {
-    entries = (String[]) append(entries, dictionary[ceil(random(dictionary.length))]);
+    entries = (String[]) append(entries, dictionary[floor(random(dictionary.length))]);
   }
 
   // set positions on window
